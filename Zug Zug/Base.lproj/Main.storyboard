@@ -68,6 +68,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Zug Zug" id="9rr-N5-If9"/>
                     <connections>
+                        <outlet property="chooseFactionLabel" destination="dKM-Zy-a8Z" id="qmp-wR-ak7"/>
                         <segue destination="jLM-Pj-aCG" kind="push" identifier="showCharactersScreenSegue" id="kg9-q6-zba"/>
                     </connections>
                 </viewController>

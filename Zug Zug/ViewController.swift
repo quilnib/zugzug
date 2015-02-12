@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var isHorde: Bool = false
     
     
+    @IBOutlet weak var chooseFactionLabel: UILabel!
     
     
 
@@ -25,6 +26,17 @@ class ViewController: UIViewController {
         
         let charactersDictionary = AllCharactersDictionary()
         var tempCharacter: Character?
+        
+        
+        //create ability to have the "Choose your faction" label on the home screen pulse visually
+        var pulseAnimation:CABasicAnimation = CABasicAnimation(keyPath: "opacity");
+        pulseAnimation.duration = 0.75;
+        pulseAnimation.toValue = NSNumber(float: 1.0);
+        pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut);
+        pulseAnimation.autoreverses = true;
+        pulseAnimation.repeatCount = FLT_MAX;
+        self.view.layer.addAnimation(pulseAnimation, forKey: nil)
+        chooseFactionLabel.layer.addAnimation(pulseAnimation, forKey: nil)
         
         
         for character in charactersDictionary.characterList {// "character" in this context may just be an index instead of an instance of the index.  Check assumption
