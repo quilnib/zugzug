@@ -12,6 +12,12 @@ class ViewController: UIViewController {
     
     var hordeCharactersArray: [Character] = []
     var allianceCharactersArray: [Character] = []
+    var isHorde: Bool = false
+    
+    
+    
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,17 +30,12 @@ class ViewController: UIViewController {
         for character in charactersDictionary.characterList {// "character" in this context may just be an index instead of an instance of the index.  Check assumption
             if let characterAffiliation = character["affiliation"] as String! {
                 if (characterAffiliation == "Horde") {
-                    if let index = find(charactersDictionary.characterList, character) //find the index of the character we were just looking up
-                    {
-                        tempCharacter = Character(index: index)
-                        hordeCharactersArray.append(tempCharacter!)
-                    }
+                    tempCharacter = Character(affiliation: (character["affiliation"] as String!), icon: (character["icon"] as String!), name: (character["characterName"] as String!), soundsArray: (character["soundsArray"] as [String])) // create a character and deal with the optionals
+                    hordeCharactersArray.append(tempCharacter!)
+                    
                 } else if (characterAffiliation == "Alliance") {
-                    if let index = find(charactersDictionary.characterList, character) //find the index of the character we were just looking up
-                    {
-                        tempCharacter = Character(index: index)
-                        hordeCharactersArray.append(tempCharacter!)
-                    }
+                    tempCharacter = Character(affiliation: (character["affiliation"] as String!), icon: (character["icon"] as String!), name: (character["characterName"] as String!), soundsArray: (character["soundsArray"] as [String])) // create a character and deal with the optionals
+                    allianceCharactersArray.append(tempCharacter!)
                 }
             }
         }
@@ -49,8 +50,14 @@ class ViewController: UIViewController {
 
         if (segue.identifier == "showCharactersScreenSegue") {
             let charactersScreenController = segue.destinationViewController as CharactersScreenViewController
-            charactersScreenController.charactersArray = hordeCharactersArray //this will need to be updated to dynamically send the correct list
-            //charactersScreenController.backgroundImage = UIImage(named: "some string for now")
+            if (isHorde)
+            {
+                charactersScreenController.charactersArray += hordeCharactersArray //this will need to be updated to dynamically send the correct list
+                charactersScreenController.backgroundImage = UIImage(named: "hordeBackground")
+            } else {// if not horde then assume alliance
+                charactersScreenController.charactersArray += allianceCharactersArray
+                charactersScreenController.backgroundImage = UIImage(named: "allianceBackground")
+            }
         }
     }
     
@@ -59,6 +66,15 @@ class ViewController: UIViewController {
         performSegueWithIdentifier("showCharactersScreenSegue", sender: sender)
     }
 
+    @IBAction func hordeButtonSelected(sender: AnyObject) {
+        
+        isHorde = true
+        performSegueWithIdentifier("showCharactersScreenSegue", sender: sender)
+    }
+    @IBAction func allianceButtonSelected(sender: AnyObject) {
+        isHorde = false
+        performSegueWithIdentifier("showCharactersScreenSegue", sender: sender)
+    }
 
 }
 

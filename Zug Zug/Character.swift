@@ -26,9 +26,18 @@ struct Character {
         let iconName = characterDictionary["icon"] as String!
         self.icon = UIImage(named: iconName)
         
-        self.name = characterDictionary["name"] as String!
+        self.name = characterDictionary["characterName"] as String!
         
         self.soundsArray += characterDictionary["soundsArray"] as [String]
+        
+    }
+    
+    init(#affiliation: String, #icon: String, #name: String, soundsArray: [String] )// allow characters to be created without having to reference AllCharactersDictionary
+    {
+        self.affiliation = affiliation
+        self.icon = UIImage(named: icon)
+        self.name = name
+        self.soundsArray += soundsArray
         
     }
     
