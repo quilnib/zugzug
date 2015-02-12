@@ -17,7 +17,6 @@
 		112577441A895A36000247AE /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112577431A895A36000247AE /* Character.swift */; };
 		112577461A89650B000247AE /* CharactersScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112577451A89650B000247AE /* CharactersScreenViewController.swift */; };
 		8312E9C81A8BE592005D9067 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8312E9C71A8BE592005D9067 /* CharacterCollectionViewCell.swift */; };
-		8312E9CD1A8C0071005D9067 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8312E9CC1A8C0071005D9067 /* CoreMedia.framework */; };
 		8312E9E91A8C0607005D9067 /* Odead.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8312E9CF1A8C0607005D9067 /* Odead.wav */; };
 		8312E9EA1A8C0607005D9067 /* Odempis4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8312E9D01A8C0607005D9067 /* Odempis4.wav */; };
 		8312E9EB1A8C0607005D9067 /* Odempis5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8312E9D11A8C0607005D9067 /* Odempis5.wav */; };
@@ -496,7 +495,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8312E9CD1A8C0071005D9067 /* CoreMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1404,10 +1402,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Zug Zug/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1415,11 +1415,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = "Zug Zug/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
