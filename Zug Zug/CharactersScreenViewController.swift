@@ -98,6 +98,8 @@ class CharactersScreenViewController: UIViewController, UICollectionViewDelegate
         
         cell.imageView.image = charactersArray[indexPath.item].icon
         cell.imageView.alpha = 1.0
+        cell.layer.masksToBounds = true //make sure everything in the cell is bound to the mask
+        cell.layer.cornerRadius = 5 //set a rounded corner radius
         return cell
     }
     
