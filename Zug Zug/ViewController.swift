@@ -60,7 +60,7 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
-        if (segue.identifier == "showCharactersScreenSegue") {
+        if (segue.identifier == "showCharactersScreenSegue" || segue.identifier == "showLeftCharactersScreenSegue") {
             let charactersScreenController = segue.destinationViewController as CharactersScreenViewController
             if (isHorde)
             {
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
     @IBAction func hordeButtonSelected(sender: AnyObject) {
         
         isHorde = true
-        performSegueWithIdentifier("showCharactersScreenSegue", sender: sender)
+        performSegueWithIdentifier("showLeftCharactersScreenSegue", sender: sender)
     }
     @IBAction func allianceButtonSelected(sender: AnyObject) {
         isHorde = false

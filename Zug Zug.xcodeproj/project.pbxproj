@@ -238,6 +238,7 @@
 		8312EB971A8C0A54005D9067 /* Griffon2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8312EB941A8C0A54005D9067 /* Griffon2.wav */; };
 		8312EB981A8C0A54005D9067 /* Grwhat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8312EB951A8C0A54005D9067 /* Grwhat.wav */; };
 		8312EB9A1A8C0A86005D9067 /* Pnready.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8312EB991A8C0A86005D9067 /* Pnready.wav */; };
+		83A9B74E1A8D5BFF00802EA5 /* PushFromLeftSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A9B74D1A8D5BFF00802EA5 /* PushFromLeftSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -488,6 +489,7 @@
 		8312EB951A8C0A54005D9067 /* Grwhat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Grwhat.wav; sourceTree = "<group>"; };
 		8312EB991A8C0A86005D9067 /* Pnready.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Pnready.wav; sourceTree = "<group>"; };
 		835D6FFA1A8A7CF7002861A3 /* scratchpad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = scratchpad.playground; sourceTree = "<group>"; };
+		83A9B74D1A8D5BFF00802EA5 /* PushFromLeftSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushFromLeftSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -530,6 +532,7 @@
 		1125771E1A8958C0000247AE /* Zug Zug */ = {
 			isa = PBXGroup;
 			children = (
+				83A9B74F1A8D5F5D00802EA5 /* customSegues */,
 				8312E9C91A8BFE59005D9067 /* audioFiles */,
 				8312E9C71A8BE592005D9067 /* CharacterCollectionViewCell.swift */,
 				112577411A89591C000247AE /* AllCharactersDictionary.swift */,
@@ -951,6 +954,14 @@
 			name = gryphonRider;
 			sourceTree = "<group>";
 		};
+		83A9B74F1A8D5F5D00802EA5 /* customSegues */ = {
+			isa = PBXGroup;
+			children = (
+				83A9B74D1A8D5BFF00802EA5 /* PushFromLeftSegue.swift */,
+			);
+			name = customSegues;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1276,6 +1287,7 @@
 				8312E9C81A8BE592005D9067 /* CharacterCollectionViewCell.swift in Sources */,
 				112577241A8958C0000247AE /* ViewController.swift in Sources */,
 				112577421A89591C000247AE /* AllCharactersDictionary.swift in Sources */,
+				83A9B74E1A8D5BFF00802EA5 /* PushFromLeftSegue.swift in Sources */,
 				112577221A8958C0000247AE /* AppDelegate.swift in Sources */,
 				112577441A895A36000247AE /* Character.swift in Sources */,
 				112577461A89650B000247AE /* CharactersScreenViewController.swift in Sources */,
