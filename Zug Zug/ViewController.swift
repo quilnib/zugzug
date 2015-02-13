@@ -81,7 +81,7 @@ class ViewController: UIViewController {
     @IBAction func hordeButtonSelected(sender: AnyObject) {
         
         isHorde = true
-        performSegueWithIdentifier("showLeftCharactersScreenSegue", sender: sender)
+        performSegueWithIdentifier("showCharactersScreenSegue", sender: sender)//change this to "showLeftCharactersScreenSegue" for custom segue
     }
     @IBAction func allianceButtonSelected(sender: AnyObject) {
         isHorde = false
